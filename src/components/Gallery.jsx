@@ -3,10 +3,11 @@ import Card from "react-bootstrap/Card";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Container } from "react-bootstrap";
 
 class Gallery extends Component {
   state = {
-    film: null,
+    film: [],
     loading: true,
     error: null,
   };
@@ -35,20 +36,19 @@ class Gallery extends Component {
       centerMode: true,
       infinite: true,
       centerPadding: "60px",
-      slidesToShow: 3,
+      slidesToShow: 5,
       speed: 500,
-      arrows: true,
-      dots: true,
     };
 
     return (
-      <div>
+      <div className="slider-container">
         <h1 className="text-white">{this.props.titolo}</h1>
+
         <Slider {...settings}>
           {film.map((item) => (
-            <Card key={item.imdbID} style={{ width: "200px" }}>
-              <Card.Img variant="top" src={item.Poster} />
-            </Card>
+            <Container>
+              <Card.Img key={item.imdbID} src={item.Poster} />
+            </Container>
           ))}
         </Slider>
       </div>
