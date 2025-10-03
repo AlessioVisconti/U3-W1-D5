@@ -46,7 +46,7 @@ class Gallery extends Component {
 
         <Slider {...settings}>
           {film.map((item) => (
-            <Container>
+            <Container fluid>
               <Card.Img key={item.imdbID} src={item.Poster} />
             </Container>
           ))}
