@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Container } from "react-bootstrap";
+import { Link } from "react-router";
 
 class Gallery extends Component {
   state = {
@@ -46,9 +46,7 @@ class Gallery extends Component {
 
         <Slider {...settings}>
           {film.map((item) => (
-            <Container fluid>
-              <Card.Img key={item.imdbID} src={item.Poster} />
-            </Container>
+            <Card.Img key={item.imdbID} src={item.Poster} as={Link} to={`/MovieDetails/${item.imdbID}`} />
           ))}
         </Slider>
       </div>
