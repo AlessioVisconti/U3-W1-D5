@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Container } from "react-bootstrap";
+import { Navbar, Container, Nav } from "react-bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { Link, NavLink } from "react-router";
 
@@ -12,7 +12,7 @@ function NavNet() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <NavLink className="me-auto mb-2 mb-lg-0">
+          <Nav className="me-auto mb-2 mb-lg-0">
             <Link to="/" className="fw-bold text-white me-5">
               Home
             </Link>
@@ -24,7 +24,7 @@ function NavNet() {
             </Link> */}
             <Link className="fw-bold text-white me-5">Recently Added</Link>
             <Link className="fw-bold text-white me-5">My List</Link>
-          </NavLink>
+          </Nav>
           <div className="d-flex align-items-center">
             <i className="bi bi-search fs-5 me-3 text-white"></i>
             <div id="kids" className="fw-bold me-3">
